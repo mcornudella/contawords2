@@ -26,13 +26,10 @@ fi
 t_total=$(timer)
 
 iconvlist=`iconv -l | tr ',' '\n' | sed 's/\///g'`
-
-#echo "iconvlist: "
-#echo $iconvlist
 #echo "$iconvlist" >&2
 
-#fileResponse=`file -i -b $input` #linux ubuntu
-fileResponse=`file -b $input` #macos
+fileResponse=`file -i -b $input` #linux ubuntu
+#fileResponse=`file -b $input` #macos
 #echo "fileResponse: " $fileResponse
 #echo "$msg" >&2
 
@@ -42,16 +39,15 @@ if [[ $fileResponse =~ "pdf" ]]; then
 
 else
 	charset=`echo "$fileResponse" | awk '{print $2}' | sed 's/charset=//' | tr '[:lower:]' '[:upper:]'`
-    #echo "charset: " $charset
+    	#echo "charset: " $charset
 	app=`echo "$fileResponse" | awk '{print $1}'`
-    #echo "app: " $app
+    	#echo "app: " $app
 	#echo "$input $charset" >&2
 
 	if [[ $iconvlist =~ "$charset" ]]; then
-        #if [[ $charset =~ "UTF-8" ]]; then #linux ubuntu
-        if [[ $app =~ "UTF-8" ]]; then #macos
+        	if [[ $charset =~ "UTF-8" ]]; then #linux ubuntu
+        	#if [[ $app =~ "UTF-8" ]]; then #macos
 			#echo "$input is UTF8" >&2
-            #echo cp $input $2/$output
 			cp "$input" "$2/$output"
 		else
 			#echo "$input $charset iconv to UTF8" >&2
