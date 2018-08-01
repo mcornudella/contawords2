@@ -1,6 +1,6 @@
 # Contawords2
 
-ContaWords2 is a pipe version of [Contawords](https://github.com/upf-iula-trl/servitoros_lite). It counts the words of any texts. It can be used in contawords.iula.upf.edu. 
+ContaWords2 is an alternate version of [Contawords](https://github.com/upf-iula-trl/servitoros_lite) that uses a pipe instead of a workflow. It counts the words of any texts. It can be used in contawords.iula.upf.edu. 
 
 ## Installation
 
