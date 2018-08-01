@@ -1,0 +1,51 @@
+
+<div class="navbar" id="main-navigation">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse">
+
+<div class="row">
+
+
+  <div class="col-xs-5">
+
+    <div class="btn-group" id="input_select_buttons" data-toggle="buttons-radio">
+      <button id="upload_button" type="button" class="btn btn-primary" href="#upload_files" data-toggle="tab"><i class="glyphicon glyphicon-folder-open"> </i> <%= t(:workspace)%></button>
+      <button id="basic_button" type="button" class="btn" href="#basic" data-toggle="tab"><i class="glyphicon glyphicon-globe"> </i> <%= t(:external_files) %></button>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+      $('#upload_button').click(function (e) {
+          $("#basic_button").removeClass("btn-primary");
+          $("#upload_button").addClass("btn-primary");
+          $.cookie('tab', '#upload_button')
+      })
+      $('#basic_button').click(function (e) {
+          $("#upload_button").removeClass("btn-primary");
+          $("#basic_button").addClass("btn-primary");
+          $.cookie('tab', '#basic_button')
+      })
+    </script>
+  </div>
+  <div class="col-xs-3">
+    <%= select "execution[input_parameters][inputs]", "language", lang_options  %>
+  </div>
+  <div class="col-xs-3 pull-right">
+    <button type="submit" class="btn btn-warning" name="commit">
+      <i class="glyphicon glyphicon-play-circle"></i> <%= t(:run) %>
+    </button>
+  </div>
+
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

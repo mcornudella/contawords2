@@ -1,0 +1,47 @@
+<%= simple_form_for @execution, :html => {:class => ''} do |f| %>
+
+  <%= f.hidden_field :type, :value => "upload_files" %>
+
+
+<div class="row" id="input_files_row">
+	<div class="col-xs-12">
+    	<div class="tab-content">
+        	<div class="tab-pane active" id="upload_files"> 
+            	<%= render :partial => 'file_list', :locals => {f: f} %> 
+            </div>
+            <div class="tab-pane" id="basic">
+              	<hr />
+              	<div class="col-xs-7">
+					<%= f.fields_for :input_parameters do |input_params| %>
+    					<%= input_params.fields_for :inputs do |inputs| %>
+    				  		<%= inputs.input "web_pages", as: :text, input_html: {value: "", rows: 10, class: 'col-xs-12', :'data-lang' => I18n.locale}, :label => t(:input_urls)  %>
+				    	<% end %>
+					<% end %>
+              	</div>
+              	<div class="col-xs-4">
+                	<br />
+                	<br />
+                	<p class="help-block text-center">
+                		<strong><i class="glyphicon glyphicon-arrow-left"></i> <%= t(:paste_here) %></strong>
+                	</p>
+                	<br />
+                	<p class="help-block text-center">
+                  		<%= t(:paste_here_2).html_safe %>
+                	</p>
+                	<p class="text-center">
+                		<%= link_to "<i class='glyphicon glyphicon-edit'> #{t(:use_example)} </i>".html_safe, "", :id => "use_example_btn", :class => "btn btn-small" %>
+                	</p>
+              	</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%= render :partial => 'tabs' %>
+
+<hr />
+
+<% end %>
+
+

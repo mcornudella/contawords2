@@ -1,0 +1,76 @@
+<% @executions ||= executions %>
+
+<div id="executions_list">
+
+  <div class="row"><h3><span class="bullet"></span><%= t(:results) %></h3></div>
+
+<div class="row">
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th><%= t(:start_date) %></th>
+        <th><%= t(:end_date) %></th>
+        <th><%= t(:status) %></th>
+        <th><%= t(:inputs) %></th>
+        <th><%= t(:results) %></th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% @executions.each do |execution| %>
+      <tr>
+        <td> <%= l execution.created_at.getlocal, :format => :list_datetime %></td>
+        <td> <%= l(execution.updated_at.getlocal, :format => :list_datetime) if execution.finished? %></td>
+        <td>
+          <span class="label <%= execution_status_class(execution) %>">
+          <%= execution_status_name(execution) %>
+          </span>
+        </td>
+        <td>
+          <%= t humanize_lang(execution.input_parameters['inputs']['language']) %>
+            <ol>
+              <% (execution.input_parameters['inputs']['web_pages'].split("\n")).each do |url|  %>
+                <li>
+                <% if false %>
+                <%= link_to url.split("/").last, url.split("/", 9).last, :target => "_blank" %>
+                <% end %>
+                	<%= link_to url.split("/").last, url, :target => "_blank" %>
+                </li>
+              <% end %>
+            </ol>
+        </td>
+
+        <td>
+        <% if execution.finished? %>
+          <% if execution.results %>
+            <% execution.results.split("\n").each do |output| %>
+            <ol>
+              <li>
+              <% if execution.finished? %>
+                <%= link_to image_tag("page_white_excel.png"), output.split("/", 9).last %> 
+                <%= link_to t(:download), output.split("/", 9).last %>
+              <% else %>
+                <%= output %>
+              <% end %>
+              </li>
+            <% end %>
+            </ol>
+            <% end %>
+          <% end %>
+        <% end %>
+        </td>
+      </tr>
+
+
+    </tbody>
+    <th>
+    </th>
+  </table>
+
+</div>
+
+<div class="row">
+  <%= paginate @executions, :pagination_class => "pagination-small pagination-centered" %>
+</div>
+
+</div>

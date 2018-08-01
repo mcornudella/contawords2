@@ -1,0 +1,33 @@
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+  <% file = UploadedFile.new(name: "New file") %>
+  <%= simple_form_for file, :html => {:multipart => true, :class => ''} do |f| %>
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><%= t(:select_file) %></h3>
+    </div>
+    <div class="modal-body">
+    
+    <div class="row" id="">
+      <div class="col-xs-6">
+        <p><strong><%= t(:upload_utf8) %></strong> </p>
+    </div>
+    </div>
+    <div class="row" id="">
+        <div class="col-xs-4">
+          <%= f.input :file, :label => false, :as => :file %>
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+
+    <div class="modal-footer">
+
+      <button class="btn" data-dismiss="modal" aria-hidden="true"><%= t(:close) %></button>
+        <button type="submit" class="btn" name="commit">
+          <i class="glyphicon glyphicon-upload"></i> <%= t(:upload_file) %>
+        </button>
+    </div>
+    </div>
+  <% end %>
+</div>

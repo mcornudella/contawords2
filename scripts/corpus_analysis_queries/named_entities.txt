@@ -1,0 +1,6 @@
+set AutoShow off;
+show +pos;
+[pos="NP.*"];
+# count by word;
+set Context 0;
+cat;

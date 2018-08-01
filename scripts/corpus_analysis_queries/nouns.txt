@@ -1,0 +1,3 @@
+set AutoShow off;
+[pos="N.*"];
+count by lemma;

@@ -1,0 +1,3 @@
+set AutoShow off;
+[pos="V.*"];
+count by lemma;

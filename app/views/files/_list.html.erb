@@ -1,0 +1,25 @@
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Filename</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% @files.each do |file| %>
+    <tr>
+      <td><%= link_to file.name, file_path(file) %> </td>
+      <td><%= file.description %> </td>
+      <td><%= file.file_file_name %> </td>
+      <td><%= link_to "<i class='glyphicon glyphicon-download'> </i>".html_safe, "#", :class => 'btn ' %> </td>
+    </tr>
+  <% end %>
+
+  </tbody>
+  <th>
+  </th>
+</table>
+

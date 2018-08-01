@@ -1,0 +1,8 @@
+
+<%= render :partial => "form" %>
+
+<%= render :partial => "list" unless @executions.empty? %>
+
+<%= render :partial => "file_form" %>
+
+<%= render :partial => 'running_modal' if params[:running] %>

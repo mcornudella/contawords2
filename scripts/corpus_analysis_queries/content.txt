@@ -1,0 +1,44 @@
+CONTENT INDEX
+
+TABS:
+
+A	INDEX, statistics
+
+B	Nouns, adjectives and verbs frequencies
+
+C	Named Entities
+
+D	Absolute lemmas frequencies (all grammatical categories included)
+
+E	Absolute word frequencies by form (all grammatical categories included)
+
+F	Absolute frequency of two words sequences (bigrams)
+
+G	Absolute frequency of specially selected two word sequences
+
+
+PART OF SPEECH TAGS: => Simple part of speech tags
+
+A	Adjective
+R	Adverb
+D	Determiner
+N	Noun
+V	Verb
+P	Pronoun
+C	Conjunction
+I	Interjection
+S	Preposition
+F	Punctuation mark
+Z	Numbers
+W	Dates and Time
+
+
+Complex tags (with information about verbal tense, grammatical person, number, gender, etc.) are explained here:
+
+English:	https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
+
+català:	http://nlp.lsi.upc.edu/freeling/doc/tagsets/tagset-ca.html
+
+español:	http://nlp.lsi.upc.edu/freeling/doc/tagsets/tagset-es.html
+
+

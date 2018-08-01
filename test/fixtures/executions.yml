@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  inputparameters: MyText
+  user: one
+  execution_id: MyString
+
+two:
+  status: 1
+  inputparameters: MyText
+  user: two
+  execution_id: MyString

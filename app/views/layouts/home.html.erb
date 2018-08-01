@@ -1,0 +1,17 @@
+<% content_for :header_menu do %>
+
+  <%= link_to t(:empieza_usarlo), executions_path, :class => "btn btn-large btn-warning", :id => "engage-btn"  %>
+  
+<% end %>
+
+<%= render :partial => 'shared/header' %>
+
+<div class="container main">
+  <%= yield %>
+</div>
+
+
+<%= render :partial => 'shared/footer' %>
+
+</body>
+</html>

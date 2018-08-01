@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ContaWords</title>
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+<div class="container-narrow">
+  <div class="row">
+    <div class="col-xs-6" id="header-left">
+      <%= link_to image_tag("logo-contawords.png"), root_path, :id => "logo-cw" %>
+      <h1 id="jumbo-name">Conta<span class="blue">Words</span></h1>
+      <%= image_tag "logo-clarin.png", :id => "logo-clarin" %>
+    </div>
+    
+    <div class="col-xs-5" id="header-right">
+    	<div class="pull-right">
+       	<div class="row">
+         	<div class="row pull-right"> <%= lang_selector %> </div>
+       	</div>
+
+       	<div class="row" id="nav_row">
+         	<% if content_for? :header_menu %>
+         	  	<%= yield :header_menu %>
+         	<% else %>
+           		<%= render :partial => 'shared/navigation' %>
+         	<% end %>
+         </div>
+       </div>
+    </div>
+  </div>

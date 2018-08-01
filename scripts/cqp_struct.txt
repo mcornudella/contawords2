@@ -1,0 +1,1 @@
+-P lemma -P pos -S s -S xml

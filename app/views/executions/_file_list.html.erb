@@ -1,0 +1,49 @@
+<% if @files.empty? %>
+	<div class="" id="panel-no-files">
+  		<p class="text-center" id="no-files">
+  			<%= t(:empty_ws) %>
+  		</p>
+  		<p class="text-center">
+  			<%= link_to "<i class='glyphicon glyphicon-folder-open'> </i> #{t(:upload_local_files)} ".html_safe, "#myModal", :"data-toggle" => "modal", :role => "button", :id => "show_file_upload" %>
+		  	<span id="or"><%= t(:or) %></span>
+  			<%= link_to "<i class='glyphicon glyphicon-globe'> </i> #{t(:use_inet_files)} ".html_safe, "#", :id => "show_external_files" %>
+		</p>
+	</div>
+<% else %>
+	<hr />
+  	<div class="col-xs-8">
+        <table class="table table-condensed">
+			<thead>
+            	<tr>
+              		<th class="select-box"><%= check_box_tag "select_all" %></th>
+					<th><%= t(:file) %></th>
+	            </tr>
+          	</thead>
+          	<tbody>
+            	<% @files.each do |file| %>
+              	<tr>
+                	<td> <%= check_box_tag "upload_files[]", file.id %>
+                		&nbsp;
+	                <%= file.name %>  </td>
+    	       		<td> <%= file.file_file_name %> </td>
+          		</tr>
+        		<% end %>
+
+      		</tbody>
+      		<th>
+      		</th>
+    	</table>
+  	</div>
+  <div class="col-xs-4 pull-center">
+    <br />
+    <br />
+    <p class="help-block text-center"><strong><%= t(:can_upload_more_than_one) %></strong> <br /> <br /><%= t(:will_count_as_one) %></p>
+    <br />
+    <p class="text-center"><%= link_to "<i class='glyphicon glyphicon-folder-open'> #{t(:upload_more_files)} </i>".html_safe, "#myModal", :"data-toggle" => "modal", :role => "button", :class => "btn btn-small" %></p>
+  </div>
+
+
+<% end %>
+
+
+

@@ -1,0 +1,16 @@
+<%= render :partial => 'shared/header' %>
+
+<div id="page" class="container">
+  <%= render partial: "layouts/flash_messages", flash: flash %>	
+  <div class="row">
+
+    <div class="col-xs-12">
+      <%= yield %>
+    </div>
+
+  </div>
+</div>
+
+<%= render :partial => 'shared/footer' %>
+</body>
+</html>

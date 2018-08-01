@@ -1,0 +1,17 @@
+<div class="row">
+  <%= simple_form_for @file, :html => {:multipart => true, :class => ''} do |f| %>
+
+    <%= f.input :name %>
+    <%= f.input :description,  :input_html => { rows: 3, class: 'col-xs-4'} %>
+
+    <% if @file.new_record? %>
+      <%= f.input :file, :as => :file %>
+    <% else %>
+      <p>File: <%= link_to @file.file_file_name, @file.file.url %></p>
+    <% end %>
+
+    <%= f.button :submit %>
+<% end %>
+</div>
+
+
