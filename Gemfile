@@ -21,10 +21,8 @@ gem 'simple-navigation-bootstrap'
 gem 'cancan'
 gem 'shareable'
 gem 'bootstrap-sass'
-#gem 'autoprefixer-rails'
 gem 'autoprefixer-rails', '8.6.2'
 gem "therubyracer"
-#gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-modal-rails'
 gem "font-awesome-rails"
@@ -34,7 +32,6 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'devise'
 gem 'sucker_punch'
-#gem 'sidekiq'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
