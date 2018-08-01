@@ -32,12 +32,9 @@ case $1 in
 esac
 done
 
-#data_dir="/mnt/vmdata/devel-trl/homeiula/mcornudella/pipa_contawords/data-directory" #"/var/wstmp/cwb/data-directory"
-data_dir="/Users/miquelcornudella/Documents/IULA/tasques/contawords/storage/data-directory"
-#registry_dir="/mnt/vmdata/devel-trl/homeiula/mcornudella/pipa_contawords/registry-directory" #"/var/wstmp/cwb/registry-directory"
-registry_dir="/Users/miquelcornudella/Documents/IULA/tasques/contawords/storage/registry-directory"
-cwb="/usr/local/bin"
-#cwb="/usr/local/cwb-3.4.14/bin" #"/usr/local/cwb-3.4.14/bin"
+data_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/data_directory"
+registry_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/registry_directory"
+cwb="/usr/local/cwb-3.4.14/bin"
 execdir=`dirname $0`
 #echo "execdir: $execdir" 1>&2
 
@@ -94,13 +91,9 @@ echo "$cwb/cwb-encode -xsB -c $charset $corpuscmd -d $data_dir/corpus$id -R $reg
 
 set -e
 $cwb/cwb-encode -xsB -c $charset $corpuscmd -d $data_dir/corpus$id -R $registry_dir/corpus$id $structcmd
-#cwb-encode -xsB -c $charset $corpuscmd -d $data_dir/corpus$id -R $registry_dir/corpus$id $structcmd
-#$cwb/cwb-encode -xsB -c $charset $corpuscmd -d $data_dir/corpus$id -R $registry_dir/corpus$id $structcmd -v
-#if [ "$?" -ne 0 ]; then echo "cwb-encode failed"; exit 1; fi
 
-/usr/local/bin/cwb-makeall -r $registry_dir CORPUS$id
-#/usr/local/bin/cwb-make -r $registry_dir CORPUS$id -D
-#if [ "$?" -ne 0 ]; then echo "cwb-make failed"; exit 1; fi
+
+/usr/local/bin/cwb-make -r $registry_dir CORPUS$id
 
 $cwb/cwb-describe-corpus -s -r $registry_dir CORPUS$id 1>&2
 
