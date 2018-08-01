@@ -1,3 +1,0 @@
-http://localhost:3000/docs/ca/doc1.txt
-http://localhost:3000/docs/ca/doc2.txt
-
