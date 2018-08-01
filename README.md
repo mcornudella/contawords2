@@ -25,3 +25,33 @@ In order to create the database, you should type the following commands:
 If you need to delete an existing database first, you should need to execute the following command before the previous ones:
 
 `$ rake db:drop:all`
+
+### Check correct paths
+
+A Contawords execution consist of calls to several scripts, stored in `scripts`. Please check that the paths listed here are correct on these files:
+
+* callFreelingGivenURL_text_list.py
+  * scripts_dir
+  * tempFiles_dir
+
+* corpus_analysis.sh
+  * registry_dir
+  * queries_dir
+  * soaplab_scripts_dir
+  * cwb
+
+* cqp_index.sh
+  * data_dir
+  * registry_dir
+  * cwb
+
+* freeling4.sh
+  * soaplab_scripts_dir
+  * freeling_dir
+  * freeling_config
+  * freeling_bin
+  * tempFiles
+
+* pipa_contawords_URL_list.sh
+  * scripts_dir
+  * output_dir
