@@ -17,11 +17,8 @@ It:
 - It merges the output of freeling for each file into an outputfile
 '''
 
-scripts_dir="/Users/miquelcornudella/Documents/IULA/tasques/contawords/scripts/"
-tempFiles_dir="/Users/miquelcornudella/Documents/IULA/tasques/contawords/storage/temp_files/"
-#scripts_dir="/mnt/vmdata/devel-trl/homeiula/mcornudella/pipa_contawords/scripts/"
-#tempFiles_dir="/mnt/vmdata/devel-trl/homeiula/mcornudella/pipa_contawords/tempFiles/"
-#tempFiles_dir="/Users/miquelcornudella/Documents/workspace/auxiliaryScriptsContawords/downloadedFiles/"
+scripts_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/scripts/"
+tempFiles_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/temp_files/"
 
 URLlist=[]
 downloadedFileNames=[]
