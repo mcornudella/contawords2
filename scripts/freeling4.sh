@@ -5,15 +5,16 @@
 # -----------------------------------------------------------------------------
 set -e
 
-soaplab_scripts_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/scripts"
-freeling_dir="/usr/local/share/FreeLing-4.1"
+soaplab_scripts_dir="/Users/miquelcornudella/Documents/IULA/tasques/contawords/scripts"
+freeling_dir="/Users/miquelcornudella/FreeLing-4.1"
 freeling_config="$freeling_dir/data/config"
 freeling_bin="/usr/local/bin"
-tempFiles="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/temp_files"
+tempFiles="/Users/miquelcornudella/Documents/IULA/tasques/contawords/storage/temp_files"
 inf=$1
 infName="$(basename $inf)"
-outputFile="$infName.freeling.txt"
-outputFileCQP="$infName.FLxmlcqp.txt"
+id=$RANDOM$RANDOM$$
+outputFile="$infName.freeling.$id.txt"
+outputFileCQP="$infName.FLxmlcqp.$id.txt"
 #shift
 #shift
 
@@ -138,10 +139,12 @@ if [[ "$param1" == "S" && "$param2" == "tagged" ]] ; then
 #### keep first line and last line!!!! -------------------------------------------------------------------
   head -1 $inf
   cat $inf | sed '1d;$d' | $freeling_bin/analyze -f $cfg $cmd '--flush' > "$tempFiles/$outputFile"
+  #cat $inf | sed '1d;$d' | $freeling_bin/analyze -f $freeling_config/$cfg $cmd
   tail -1 $inf
 
 else
   $freeling_bin/analyze -f $cfg $cmd  '--flush' < $inf > "$tempFiles/$outputFile"
+  #$freeling_bin/analyze -f $freeling_config/$cfg $cmd < $inf
 fi
 
 #echo "File analyzed. Converting to xmlcqp format..."
@@ -151,3 +154,5 @@ fi
 #echo "Script executed correctly. Outputfile: "
 
 echo "$tempFiles/$outputFileCQP"
+#execdir=`dirname $0`
+#freelingKeeptags_PreProcess.py -t $execdir/tmp/tags$RANDOM.list < $inf | analyze --utf -f $cfg $@ | freelingKeeptags_PosProcess.py -t $execdir/tmp/tags$RANDOM.list
