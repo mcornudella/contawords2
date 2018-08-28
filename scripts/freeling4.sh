@@ -5,11 +5,11 @@
 # -----------------------------------------------------------------------------
 set -e
 
-soaplab_scripts_dir="/Users/miquelcornudella/Documents/IULA/tasques/contawords/scripts"
-freeling_dir="/Users/miquelcornudella/FreeLing-4.1"
+soaplab_scripts_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/scripts"
+freeling_dir="/usr/local/share/FreeLing-4.1"
 freeling_config="$freeling_dir/data/config"
 freeling_bin="/usr/local/bin"
-tempFiles="/Users/miquelcornudella/Documents/IULA/tasques/contawords/storage/temp_files"
+tempFiles="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/temp_files"
 inf=$1
 infName="$(basename $inf)"
 id=$RANDOM$RANDOM$$
