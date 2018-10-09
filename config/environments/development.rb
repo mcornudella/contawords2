@@ -60,8 +60,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   #needed for devise confirmable
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'contawords-iulaterm.s.upf.edu:3110' }
 end
 
-UPLOADED_FILES_BASE_URL = "localhost:3000"
+UPLOADED_FILES_BASE_URL = "contawords-iulaterm.s.upf.edu:3110"
 #UPLOADED_FILES_BASE_URL = "/Users/miquelcornudella/Documents/IULA/tasques/contawords"
