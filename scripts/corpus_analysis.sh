@@ -19,10 +19,10 @@ if [ "$1" == "" ] ; then
   echo
 fi
 
-registry_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/registry_directory"
-cwb="/usr/local/cwb-3.4.14/bin"
-queries_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/scripts/corpus_analysis_queries"
-soaplab_scripts_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/scripts"
+registry_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/registry_directory"
+cwb="/usr/local/cwb-3.4.15/bin"
+queries_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/scripts/corpus_analysis_queries"
+soaplab_scripts_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/scripts"
 execdir=`dirname $0`
 
 #regexp01="$regexp01"
@@ -51,7 +51,7 @@ else
   lang=".$lang"
 fi
 
-mkdir -p "/Users/miquelcornudella/Documents/IULA/tasques/contawords/storage/query_results"
+mkdir -p "/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/query_results"
 
 set -e
 
@@ -145,7 +145,7 @@ $cwb/cwb-scan-corpus_3_2 -r "$registry_dir" -C "$corpusid" word+0 pos+0=/[JVNA].
 #echo "Compiling excel file ..." >&2
 #$soaplab_scripts_dir/tab2xls_v2.pl query_results $xlsfile
 
-$soaplab_scripts_dir/tab2xls_v2.pl "/Users/miquelcornudella/Documents/IULA/tasques/contawords/storage/query_results" $xlsfile
+$soaplab_scripts_dir/tab2xls_v2.pl "/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/query_results" $xlsfile
 
-rm -r "/mnt/vmdata/devel-trl/var/rails/contawords2/storage/query_results/"
+rm -r "/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/query_results/"
 #rm -f query_results/*
