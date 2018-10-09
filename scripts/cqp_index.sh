@@ -32,9 +32,9 @@ case $1 in
 esac
 done
 
-data_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/data_directory"
-registry_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/registry_directory"
-cwb="/usr/local/cwb-3.4.14/bin"
+data_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/data_directory"
+registry_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/registry_directory"
+cwb="/usr/local/cwb-3.4.15/bin"
 execdir=`dirname $0`
 #echo "execdir: $execdir" 1>&2
 
