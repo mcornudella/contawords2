@@ -24,7 +24,7 @@ class ExecuteNewPipeContawordsJob #< ApplicationJob
       end
       #web_pages=input_parameters[:inputs][:web_pages].squish
       #language=input_parameters[:inputs][:language]
-      #puts `/Users/miquelcornudella/Documents/IULA/tasques/contawords/scripts/pipa_contawords_URL_list.sh "#{web_pages}" #{language}`
+      #puts `/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/scripts/pipa_contawords_URL_list.sh "#{web_pages}" #{language}`
   end
 
     private
@@ -35,7 +35,7 @@ class ExecuteNewPipeContawordsJob #< ApplicationJob
             language=input_parameters[:inputs][:language]
             #puts "Input object"
             #puts object.inspect
-            job_output = `/Users/miquelcornudella/Documents/IULA/tasques/contawords/scripts/pipa_contawords_URL_list.sh "#{web_pages}" #{language}`
+            job_output = `/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/scripts/pipa_contawords_URL_list.sh "#{web_pages}" #{language}`
             #puts "job_output:"
             #puts job_output
             object[:status] = "finished"
