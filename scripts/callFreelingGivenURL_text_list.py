@@ -17,8 +17,8 @@ It:
 - It merges the output of freeling for each file into an outputfile
 '''
 
-scripts_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/scripts/"
-tempFiles_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/storage/temp_files/"
+scripts_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/scripts/"
+tempFiles_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/temp_files/"
 
 URLlist=[]
 downloadedFileNames=[]
