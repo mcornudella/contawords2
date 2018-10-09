@@ -55,3 +55,14 @@ A Contawords execution consist of calls to several scripts, stored in `scripts`.
 * pipa_contawords_URL_list.sh
   * scripts_dir
   * output_dir
+  
+  ### Dependencies
+  
+  Contawords uses perl and python scripts. Make sure that they are installed with the following dependencies:
+  
+  * Python's required libraries (most of them come installed by default)
+    * subprocess
+    * irllib2
+  
+  * Perl modules
+    * Spreadsheet::WriteExcel
