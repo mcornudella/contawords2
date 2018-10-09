@@ -5,8 +5,8 @@
 # -----------------------------------------------------------------------------
 set -e
 
-scripts_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/scripts"
-output_dir="/mnt/vmdata/devel-trl/var/rails/contawords2/public/system/output_files"
+scripts_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/scripts"
+output_dir="/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/public/system/output_files"
 
 inputFile=$1
 lang=$2
