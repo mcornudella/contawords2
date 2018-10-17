@@ -26,7 +26,7 @@ $(document).ready ->
 
   $("#use_example_btn").on 'click', (e) ->
     lang = $('#execution_input_parameters_inputs_web_pages').data('lang')
-    $('#execution_input_parameters_inputs_web_pages').val("http://contawords-iulaterm.s.upf.edu:3110/docs/" + lang + "/doc1.txt\n" + "http://contawords-iulaterm.s.upf.edu:3110/docs/" + lang + "/doc2.txt")
+    $('#execution_input_parameters_inputs_web_pages').val("http://contawords.iula.upf.edu:3110/docs/" + lang + "/doc1.txt\n" + "http://contawords.iula.upf.edu:3110/docs/" + lang + "/doc2.txt")
     $('#execution_input_parameters_inputs_language').val(lang)
     return false
 
