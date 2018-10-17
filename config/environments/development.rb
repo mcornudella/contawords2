@@ -63,5 +63,5 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'contawords-iulaterm.s.upf.edu:3110' }
 end
 
-UPLOADED_FILES_BASE_URL = "contawords-iulaterm.s.upf.edu:3110"
+UPLOADED_FILES_BASE_URL = "contawords.iula.upf.edu:3110"
 #UPLOADED_FILES_BASE_URL = "/Users/miquelcornudella/Documents/IULA/tasques/contawords"
