@@ -148,4 +148,3 @@ $cwb/cwb-scan-corpus_3_2 -r "$registry_dir" -C "$corpusid" word+0 pos+0=/[JVNA].
 $soaplab_scripts_dir/tab2xls_v2.pl "/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/query_results" $xlsfile
 
 rm -r "/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/storage/query_results/"
-#rm -f query_results/*
