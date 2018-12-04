@@ -102,8 +102,7 @@ cmd=`echo "$args" | sed 's/ --keeptags//'`
 #echo "cmd>$cmd" 1>&2
 if [[ "$param3" == "S" && "$lang" == "es" ]] ; then
 # "/usr/local/share/Freeling-4.1"
-    #cmd=`echo "$cmd" | sed -r 's/ --bio/ -N \/usr\/local\/Freeling\-4\.1\/data\/es\/nerc\/ner\-ab\-rich\.dat/'` #linux ubuntu
-    cmd=`echo "$cmd" | sed 's/ --bio/ -N \/usr\/local\/Freeling\-4\.1\/data\/es\/nerc\/ner\-ab\-rich\.dat/'`
+    cmd=`echo "$cmd" | sed 's/ --bio/ -N \/usr\/local\/share\/freeling\/es\/nerc\/ner\/ner\-ab\-rich\.dat/'` #linux ubuntu
   #cmd=`echo "$cmd" | sed -r 's/ --bio/ -N \/usr\/ws\/freeling\/freeling3\.0\-alfa1\/share\/freeling\/es\/ner\/ner\-ab\.dat/'`
 else
     cmd=`echo "$cmd" | sed 's/ --bio//'`
