@@ -38,7 +38,11 @@ class ExecuteNewPipeContawordsJob #< ApplicationJob
             job_output = `/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/scripts/pipa_contawords_URL_list.sh "#{web_pages}" #{language}`
             #puts "job_output:"
             #puts job_output
-            object[:status] = "finished"
+            if job_output.squish.include? ".xls"
+               object[:status] = "finished"
+            else
+               object[:status] = "error"
+            end
             object[:updated_at] = Time.new.inspect
             object[:results] = job_output.squish
             #puts "Output object"
