@@ -22,7 +22,7 @@
           	<tbody>
             	<% @files.each do |file| %>
               	<tr>
-                	<td> <%= check_box_tag "upload_files[]", file.id %>
+                	<td> <%= check_box_tag "uploaded_files[]", file.id %>
                 		&nbsp;
 	                <%= file.name %>  </td>
     	       		<td> <%= file.file_file_name %> </td>
