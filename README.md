@@ -60,6 +60,9 @@ A Contawords execution consist of calls to several scripts, stored in `scripts`.
   
   Contawords uses perl and python scripts. Make sure that they are installed with the following dependencies:
   
+  * Bash libraries
+    * pdftotxt (sudo apt-get install poppler-utils)
+  
   * Python's required libraries (most of them come installed by default)
     * subprocess
     * irllib2
