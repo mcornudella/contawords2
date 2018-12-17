@@ -33,18 +33,14 @@ class ExecuteNewPipeContawordsJob #< ApplicationJob
             #object[:status] = "initialized"
             web_pages=input_parameters[:inputs][:web_pages].squish
             language=input_parameters[:inputs][:language]
-            #puts "Input object"
-            #puts object.inspect
             job_output = `/mnt/vmdata/contawords-iulaterm/var/rails/contawords2/scripts/pipa_contawords_URL_list.sh "#{web_pages}" #{language}`
-            #puts "job_output:"
-            #puts job_output
-            if job_output.squish.include? ".xls"
+            object[:updated_at] = Time.new.inspect
+            object[:results] = job_output.squish
+            if object[:results].include? ".xls" then
                object[:status] = "finished"
             else
                object[:status] = "error"
             end
-            object[:updated_at] = Time.new.inspect
-            object[:results] = job_output.squish
             #puts "Output object"
             #puts object.inspect
             object.save
