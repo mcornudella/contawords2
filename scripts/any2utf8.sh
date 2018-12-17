@@ -34,7 +34,7 @@ fileResponse=`file -i -b $input` #linux ubuntu
 #echo "$msg" >&2
 
 if [[ $fileResponse =~ "pdf" ]]; then
-	echo "$input PDF pdftotext to UTF8" >&2
+	#echo "$input PDF pdftotext to UTF8" >&2
 	pdftotext "$input" "$2/$output"
 
 else
