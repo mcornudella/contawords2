@@ -13,7 +13,7 @@ module ExecutionsHelper
     
     def execution_status_name(execution)
         return t(:finished) if execution.finished?
+        return t(:error) if execution.error?
         t(:counting)
-        #return "prova"
     end
 end
